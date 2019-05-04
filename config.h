@@ -5,8 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Mono:size=11:antialias=true:autohint=true";
+static char *font = "Go Mono:size=11:antialias=true:autohint=true";
 static int borderpx = 5;
+static int max_bold_weight_infelicity = 20;
 
 /*
  * What program is execed by st depends of these precedence rules:
