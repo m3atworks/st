@@ -85,7 +85,7 @@ unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#ededed", /* base00 */
+  "#e4e4e4", /* base00 */
   "#d7005f", /* base08 */
   "#718c00", /* base0B */
   "#d75f00", /* base0A */
@@ -130,7 +130,8 @@ static unsigned int rows = 24;
 /*
  * Default colour and shape of the mouse cursor
  */
-static unsigned int mouseshape = XC_xterm;
+static unsigned int mouseshape = XC_top_left_arrow;
+//static unsigned int mouseshape = XC_tcross;
 static unsigned int mousefg = 7;
 static unsigned int mousebg = 0;
 
