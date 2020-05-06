@@ -85,31 +85,41 @@ unsigned int tabspaces = 4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#e4e4e4", /* base00 */
-  "#d7005f", /* base08 */
-  "#718c00", /* base0B */
-  "#d75f00", /* base0A */
-  "#4271ae", /* base0D */
-  "#8959a8", /* base0E */
-  "#3e999f", /* base0C */
-  "#4d4d4c", /* base05 */
-  "#969694", /* base03 */
-  "#d7005f", /* base09 */
-  "#718c00", /* base01 */
-  "#d75f00", /* base02 */
-  "#4271ae", /* base04 */
-  "#8959a8", /* base06 */
-  "#3e999f", /* base0F */
-  "#4d4d4c", /* base07 */};
+
+  /* 8 normal colors */
+  [0] = "#112616", /* black   */
+  [1] = "#7f2b27", /* red     */
+  [2] = "#2f7e25", /* green   */
+  [3] = "#717f24", /* yellow  */
+  [4] = "#2f6a7f", /* blue    */
+  [5] = "#47587f", /* magenta */
+  [6] = "#327f77", /* cyan    */
+  [7] = "#647d75", /* white   */
+
+  /* 8 bright colors */
+  [8]  = "#3c4812", /* black   */
+  [9]  = "#e08009", /* red     */
+  [10] = "#18e000", /* green   */
+  [11] = "#bde000", /* yellow  */
+  [12] = "#00aae0", /* blue    */
+  [13] = "#0058e0", /* magenta */
+  [14] = "#00e0c4", /* cyan    */
+  [15] = "#73fa91", /* white   */
+
+  /* special colors */
+  [256] = "#0f1610", /* background */
+  [257] = "#637d75", /* foreground */
+};
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
-static unsigned int defaultcs = 13;
-static unsigned int defaultrcs = 0;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+static unsigned int defaultcs = 257;
+static unsigned int defaultrcs = 256;
+
 
 /*
  * Default shape of cursor
@@ -130,7 +140,7 @@ static unsigned int rows = 24;
 /*
  * Default colour and shape of the mouse cursor
  */
-static unsigned int mouseshape = XC_top_left_arrow;
+static unsigned int mouseshape = XC_xterm;
 //static unsigned int mouseshape = XC_tcross;
 static unsigned int mousefg = 7;
 static unsigned int mousebg = 0;
